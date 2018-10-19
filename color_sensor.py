@@ -43,10 +43,10 @@ class FoobotColorSensor:
   def ambient_right(self):
     return self.ambient(self.right)
 
-  # gives raw numerical rgb reading value
+  # gives raw numerical rgb reading value as an array of [red, green, blue]
   def rgb(self, s):
     s.mode = 'COL-RGB-RAW'
-    return s.value()
+    return [s.value(1), s.value(2), s.value(3)]
 
   def rgb_left(self):
     return self.rgb(self.left)
