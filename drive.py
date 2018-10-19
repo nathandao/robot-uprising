@@ -9,19 +9,20 @@ from math import pi
 
 class FoobotDrive:
 
-    def __init__(self, wheel_diameter, wheel_dist, default_speed = 50, default_turn_speed = 10):
+    def __init__(self, wheel_diameter, wheel_dist, gear_ratio = 1, default_speed = 50, default_turn_speed = 10):
         self.wheel_diameter = wheel_diameter
         self.wheel_circ = wheel_diameter * pi
         self.wheel_dist = wheel_dist
         self.default_speed = default_speed
         self.default_turn_speed = default_turn_speed
+        self.gear_ratio = gear_ratio
         # self.move_steering = MoveSteering(OUTPUT_A, OUTPUT_B)
         self.move_tank= MoveTank(OUTPUT_A, OUTPUT_B)
 
     def move_straigth(self, distance, speed = 0):
         if speed == 0:
             speed = self.default_speed
-        rotations = distance / self.wheel_dist
+        rotations = distance / self.wheel_dist / gear_ratio
         self.move_tank.on_for_rotations(self.default_speed, self.default_speed, rotations)
 
     def turn(self, deg, speed = 0):
@@ -30,7 +31,7 @@ class FoobotDrive:
         if deg < 0:
             speed = 0 - speed
         rotation_arc = (pi * self.wheel_dist) * (deg / 360)
-        self.move_tank.on_for_rotations(speed, 0 - speed, rotation_arc / 16)
+        self.move_tank.on_for_rotations(speed, 0 - speed, rotation_arc / 16 / gear_ratio)
 
     def turn_right(self, deg, speed = 0):
         turn(deg, speed)
