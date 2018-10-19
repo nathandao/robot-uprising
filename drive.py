@@ -3,9 +3,9 @@ from math import pi
 
 class FoobotDrive:
 
-    def __init__(self, wheel_d, wheel_dist, default_speed = 50):
-        self.wheel_d = wheel_d
-        self.wheel_circ = wheel_d * pi
+    def __init__(self, wheel_diameter, wheel_dist, default_speed = 50):
+        self.wheel_diameter = wheel_diameter
+        self.wheel_circ = wheel_diameter * pi
         self.wheel_dist = wheel_dist
         self.default_speed = default_speed
         # self.move_steering = MoveSteering(OUTPUT_A, OUTPUT_B)
@@ -22,5 +22,5 @@ class FoobotDrive:
             speed = self.default_speed
         if deg < 0:
             speed = 0 - speed
-        rotation_arc = (pi * self.wheel_dist) * ((deg % 360) / 360) / 2
-        self.move_tank.on_for_rotations(speed, 0 - speed, rotation_arc / 2)
+        rotation_arc = (pi * self.wheel_dist) * (deg / 360)
+        self.move_tank.on_for_rotations(speed, 0 - speed, rotation_arc / 16)
