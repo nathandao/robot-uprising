@@ -13,7 +13,7 @@ class FoobotColorSensor:
   # gives the color reading of either
   # 'unknown','black','blue','green','yellow','red','white' or 'brown'
   def color(self, s):
-    if s.mode !== 'COL-COLOR':
+    if s.mode != 'COL-COLOR':
       s.mode = 'COL-COLOR'
     colors = ('unknown','black','blue','green','yellow','red','white','brown')
     return colors[s.value()]
@@ -26,7 +26,7 @@ class FoobotColorSensor:
 
   # gives numberical intensity reading
   def intensity(self, s):
-    if s.mode !== 'COL-REFLECT':
+    if s.mode != 'COL-REFLECT':
       s.mode = 'COL-REFLECT'
     return s.value()
 
@@ -38,7 +38,7 @@ class FoobotColorSensor:
 
   # gives ambient light reading value
   def ambient(self, s):
-    if s.mode !== 'COL-AMBIENT':
+    if s.mode != 'COL-AMBIENT':
       s.mode = 'COL-AMBIENT'
     return s.value()
 
@@ -50,7 +50,7 @@ class FoobotColorSensor:
 
   # gives raw numerical rgb reading value as an array of [red, green, blue]
   def rgb(self, s):
-    if s.mode !== 'RGB-RAW':
+    if s.mode != 'RGB-RAW':
       s.mode = 'RGB-RAW'
     return [s.value(0), s.value(1), s.value(2)]
 
