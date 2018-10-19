@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from ev3dev2.sensor import ColorSensor, INPUT_1, INPUT_2
+from ev3dev2.sensor.lego import ColorSensor, INPUT_1, INPUT_2
 
 cl = ColorSensor(INPUT_1)
 
