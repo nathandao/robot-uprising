@@ -13,7 +13,7 @@ class FoobotDrive:
                  wheel_diameter,
                  wheel_dist,
                  gear_ratio = 1,
-                 default_speed = 100,
+                 default_speed = 0,
                  default_turn_speed = 100):
 
         self.wheel_diameter = wheel_diameter
@@ -28,7 +28,7 @@ class FoobotDrive:
     def move_straigth(self, distance, speed = 0):
         if speed == 0:
             speed = self.default_speed
-        rotations = distance / self.wheel_dist / self.gear_ratio
+        rotations = distance / self.wheel_dist / gear_ratio
         self.move_tank.on_for_rotations(self.default_speed, self.default_speed, rotations)
 
     def turn(self, deg, speed = 0):
@@ -37,10 +37,15 @@ class FoobotDrive:
         if deg < 0:
             speed = 0 - speed
         rotation_arc = (pi * self.wheel_dist) * (deg / 360)
-        self.move_tank.on_for_rotations(speed, 0 - speed, rotation_arc / 16 / self.gear_ratio)
+        self.move_tank.on_for_rotations(speed, 0 - speed, rotation_arc / 16 / gear_ratio)
 
     def turn_right(self, deg, speed = 0):
         turn(deg, speed)
 
     def turn_left(self, deg, speed = 0):
         turn(0 - deg, speed)
+
+    def run(self, speed = 0):
+        if speed == 0:
+            speed = self.default_speed
+        self.move_tank.run_forever(speed)
