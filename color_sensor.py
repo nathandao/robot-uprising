@@ -7,5 +7,5 @@ cl = ColorSensor(INPUT_1)
 cl.mode = 'COL-COLOR'
 colors=('unknown','black','blue','green','yellow','red','white','brown')
 
-while True
+while True:
   print(colors[cl.value()])
