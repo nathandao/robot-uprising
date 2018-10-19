@@ -1,26 +1,9 @@
-from getkey import getkey, keys
+#!/usr/bin/env python3
+
 from drive import FoobotDrive
 
-car = FoobotDrive(5.6, 12, 1/3)
-
-val = 'test'
+car = FoobotDrive(3.53, 15.28, 3/5, 70, 20)
 
 while True:
-  key = getkey()
-  if key == keys.UP:
-      val = 'non test'
-      print(val)
-      car.move_straigth(0.5)
-  elif key == keys.DOWN:
-      val = 'test'
-      print(val)
-      car.move_straigth(-0.5)
-  elif key == keys.LEFT:
-      print(val)
-      car.turn(-2)
-  elif key == keys.RIGHT:
-      print(val)
-      car.turn(2)
-  else:
-      print(val)
-      print("YYOLOOO")
+    dist = input()
+    car.move_straigth(dist)
