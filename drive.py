@@ -22,5 +22,5 @@ class FoobotDrive:
             speed = self.default_speed
         if deg < 0:
             speed = 0 - speed
-        rotation_arc = (pi * self.wheel_dist) * ((deg % 360) / 360)
+        rotation_arc = (pi * self.wheel_dist) * ((deg % 360) / 360) / 2
         self.move_tank.on_for_rotations(speed, 0 - speed, rotation_arc / 2)
