@@ -18,4 +18,5 @@
 
 from drive import FoobotDrive
 
-FoobotDrive.move_straigth(10)
+car = FoobotDrive(5.6, 6)
+car.move_straigth(10)
