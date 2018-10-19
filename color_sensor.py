@@ -8,17 +8,20 @@ class FoobotColorSensor:
     self.left = ColorSensor(INPUT_1)
     self.right = ColorSensor(INPUT_2)
 
+  # gives the color reading of either
+  # 'unknown','black','blue','green','yellow','red','white' or 'brown'
   def color(self, s):
     s.mode = 'COL-COLOR'
     colors = ('unknown','black','blue','green','yellow','red','white','brown')
     return colors[s.value()]
 
-  def left(self):
+  def color_left(self):
     return self.color(self.left)
 
   def color_right(self):
     return self.color(self.right)
 
+  # gives numberical intensity reading
   def intensity(self, s):
     s.mode = 'COL-REFLECT'
     return s.value()
@@ -29,6 +32,7 @@ class FoobotColorSensor:
   def intensity_right(self):
     return self.intensity(self.right)
 
+  # gives ambient light reading value
   def ambient(self, s):
     s.mode = 'COL-AMBIENT'
     return s.value()
@@ -39,6 +43,7 @@ class FoobotColorSensor:
   def ambient_right(self):
     return self.ambient(self.right)
 
+  # gives raw numerical rgb reading value
   def rgb(self, s):
     s.mode = 'COL-RGB-RAW'
     return s.value()

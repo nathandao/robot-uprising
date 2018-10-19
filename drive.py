@@ -1,6 +1,12 @@
 from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent, MoveTank, MoveSteering
 from math import pi
 
+# Usage:
+# car = FoobotDrive(wheel_diameter, distance_between_wheel_center_points, default_speed)
+# if default_speed is not set, default speed is 50
+
+# distances and lenght in cm
+
 class FoobotDrive:
 
     def __init__(self, wheel_diameter, wheel_dist, default_speed = 50, default_turn_speed = 10):
