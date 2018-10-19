@@ -1,7 +1,7 @@
 from getkey import getkey, keys
 from drive import FoobotDrive
 
-car = FoobotDrive(5.6, 12)
+car = FoobotDrive(5.6, 12, 1/3)
 
 val = 'test'
 
