@@ -11,8 +11,6 @@ class FoobotDrive:
         # self.move_steering = MoveSteering(OUTPUT_A, OUTPUT_B)
         self.move_tank= MoveTank(OUTPUT_A, OUTPUT_B)
 
-    def move_straigth(self, distance, speed = 0):
-        if speed == 0:
-            speed = self.default_speed
+    def move_straigth(self, distance, speed = self.default_speed):
         rotations = distance / self.wheel_dist
         self.move_tank.on_for_rotations(self.default_speed, self.default_speed, rotations)
