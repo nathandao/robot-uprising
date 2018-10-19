@@ -1,8 +1,8 @@
 from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent, MoveTank, MoveSteering
 
 wheel_circ = 3.14 * 5.6
-forward_distance = 150
-left_distance = 100
+forward_distance = 20
+left_distance = 10
 
 rotations1 = 150 / wheel_circ
 rotations2 = 100 / wheel_circ
