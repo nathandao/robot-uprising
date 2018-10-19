@@ -5,8 +5,8 @@ from ev3dev2.sensor import INPUT_1, INPUT_2
 
 cl = ColorSensor(INPUT_1)
 
-cl.mode = 'COL-COLOR'
+cl.mode = 'COL-REFLECT'
 colors=('unknown','black','blue','green','yellow','red','white','brown')
 
 while True:
-  print(colors[cl.value()])
+  print(cl.value())
