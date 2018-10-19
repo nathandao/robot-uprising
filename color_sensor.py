@@ -13,38 +13,38 @@ class FoobotColorSensor:
     colors = ('unknown','black','blue','green','yellow','red','white','brown')
     return colors[s.value()]
 
-  def color_left(self):
-    return self.get_color(self.left)
+  def left(self):
+    return self.color(self.left)
 
   def color_right(self):
-    return self.get_color(self.right)
+    return self.color(self.right)
 
   def intensity(self, s):
     s.mode = 'COL-REFLECT'
     return s.value()
 
   def intensity_left(self):
-    return self.get_intensity(self.left)
+    return self.intensity(self.left)
 
   def intensity_right(self):
-    return self.get_intensity(self.right)
+    return self.intensity(self.right)
 
-  def get_ambient(self, s):
+  def ambient(self, s):
     s.mode = 'COL-AMBIENT'
     return s.value()
 
   def ambient_left(self):
-    return self.get_ambient(self.left)
+    return self.ambient(self.left)
 
   def ambient_right(self):
-    return self.get_ambient(self.right)
+    return self.ambient(self.right)
 
-  def get_rgb(self, s):
+  def rgb(self, s):
     s.mode = 'COL-RGB-RAW'
     return s.value()
 
   def rgb_left(self):
-    return self.get_rgb(self.left)
+    return self.rgb(self.left)
 
   def rgb_right(self):
-    return self.get_rgb_raw(self.right)
+    return self.rgb(self.right)
