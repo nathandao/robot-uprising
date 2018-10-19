@@ -7,8 +7,6 @@ class FoobotColorSensor:
   def __init__(self):
     self.left = ColorSensor(INPUT_1)
     self.right = ColorSensor(INPUT_2)
-    seft.left_mode = ''
-    seft.right_mode = ''
 
   # gives the color reading of either
   # 'unknown','black','blue','green','yellow','red','white' or 'brown'
