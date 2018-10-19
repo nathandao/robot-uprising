@@ -8,7 +8,7 @@ print(color_sensor.intensity_left())
 print("ambient")
 print(color_sensor.ambient_left())
 print("rgb")
-print(', '.join(color_sensor.rgb_left())
+print(', '.join(color_sensor.rgb_left()))
 
 print(color_sensor.color_right())
 print("intensity")
