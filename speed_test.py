@@ -16,6 +16,6 @@
 # ms.on_for_rotations(-25, 25, rotation_dist / wheel_circ)
 # ms.on_for_rotations(75, 75, rotations2)
 
-from "lib/drive" import FoobotDrive
+from drive import FoobotDrive
 
 FoobotDrive.move_straigth(10)
