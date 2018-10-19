@@ -1,7 +1,5 @@
 from getkey import getkey, keys
 from drive import FoobotDrive
-import thread
-import time
 
 car = FoobotDrive(5.6, 12)
 
