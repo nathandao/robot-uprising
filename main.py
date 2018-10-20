@@ -32,8 +32,7 @@ cs_left_mode = 'rgb'
 cs_right_mode = 'rgb'
 
 def t_cs_left():
-    global cs_left_mode
-    global cs_left_reading
+    global cs_left_mode, cs_left_reading, cs_left_rgb
     while loop:
         if cs_left_mode == 'rgb':
             cs_left_rgb = cs.rgb_left()
@@ -43,8 +42,7 @@ def t_cs_left():
 cs_left_thread = Thread(target = t_cs_left)
 
 def t_cs_right():
-    global cs_right_mode
-    global cs_right_reading
+    global cs_right_mode, cs_right_reading, cs_right_rgb
     while loop:
         if cs_right_mode == 'rgb':
             cs_right_rgb = cs.rgb_left()
@@ -63,9 +61,8 @@ us_thread = Thread(target = t_us)
 def t_log():
     global us_distance, cs_left_rgb, cs_right_rgb
     while loop:
-        print(cs_left_rgb[0])
-        print(cs_left_rgb[1])
-        print(cs_left_rgb[2])
+        print(','.join(str(x) for x in cs_left_rgb))
+        print(','.join(str(x) for x in cs_right_rgb))
         print(us_distance)
         sleep(0.5);
 
@@ -74,4 +71,5 @@ log_thread = Thread(target = t_log)
 cs_left_thread.start()
 cs_right_thread.start()
 us_thread.start()
+
 log_thread.start()
