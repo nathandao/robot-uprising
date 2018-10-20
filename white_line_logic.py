@@ -50,6 +50,7 @@ class WhiteLineFollower:
                 self.car.turn_left(180)
             # Section end if we reach orange color
             elif self.is_it_orange(self.color_sensor.rgb_left()) or self.is_it_orange(self.color_sensor.rgb_right()):
+                print('ORANGE --- STOP')
                 self.car.stop()
             else:
                 self.car.run()
