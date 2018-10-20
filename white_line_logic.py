@@ -23,6 +23,11 @@ class WhiteLineFollower:
             return True
         return False
 
+    def is_it_orange(self, rbg):
+        if self.isValueBetween(orangeRMinVal, orangeRMaxVal, rbg[0]) and self.isValueBetween(orangeBMinVal, orangeBMaxVal, rbg[1]) and self.isValueBetween(orangeGMinVal, orangeGMaxVal, rbg[2]):
+            return True
+        return False
+
     def run(self):
         while True:
             # If both sensors on white, prioritise right turns
@@ -43,6 +48,9 @@ class WhiteLineFollower:
                 time.sleep(8)
                 self.car.move_straigth(-10)
                 self.car.turn_left(180)
+            # Section end if we reach orange color
+            elif self.is_it_orange(self.color_sensor.rgb_left()) or self.is_it_orange(self.color_sensor.rbg_right()):
+                self.car.stop()
             else:
                 print('RUN FORWARD ---')
                 self.car.run()
