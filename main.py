@@ -49,7 +49,7 @@ us_thread = Thread(target = t_us)
 
 def t_log():
     while loop:
-        print('us: %s', us_reading)
+        print('us: %s', us_distance)
         sleep(1000);
 log_thread = Thread(target = t_log)
 
