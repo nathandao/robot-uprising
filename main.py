@@ -4,6 +4,7 @@ from time import sleep
 from foobot.drive import FoobotDrive
 from foobot.color_sensor import FoobotColorSensor
 from foobot.ultrasonic_sensor import FoobotUltrasonicSensor
+from white_line_logic import WhiteLineFollower
 
 # Initializing components and ports:
 #
@@ -76,3 +77,6 @@ cs_right_thread.start()
 us_thread.start()
 
 log_thread.start()
+
+follow = WhiteLineFollower(car=car, color_sensor=cs)
+follow.run()
