@@ -22,8 +22,6 @@ class FoobotDrive:
         self.default_speed = default_speed
         self.default_turn_speed = default_turn_speed
         self.gear_ratio = gear_ratio
-
-
         self.move_steering = MoveSteering(OUTPUT_A, OUTPUT_B)
         self.move_tank= MoveTank(OUTPUT_A, OUTPUT_B)
 

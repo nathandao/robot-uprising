@@ -15,8 +15,7 @@ UsDistanceFromWall = us.distance()
 
 def moveFromStartToOrange():
     while not orangeColorDetected(cs.rgb_left()):
-        moveForwardWithWallDistance(10, 10, 10)
-
+        moveForwardWithWallDistance(8, 5, 10)
 
 # detects if color is orange and sends back a boolean
 def orangeColorDetected(colorArray):
