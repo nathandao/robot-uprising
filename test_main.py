@@ -1,11 +1,12 @@
 from threading import Thread
-from main import us_distance, init_telemetrics
+from main import init_telemetrics, loop
 
 init_telemetrics()
 
 def test_t():
     global us_distance
-    print('DISTANCE=======', us_distance)
+    while loop:
+        print('DISTANCE=======', us_distance)
 
-t = Thread(test_t)
+t = Thread(target=test_t)
 t.start()

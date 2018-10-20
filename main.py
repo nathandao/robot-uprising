@@ -14,7 +14,7 @@ from white_line_logic import WhiteLineFollower
 # Left Motor: PIN A
 # Right Motor: PIN B
 
-car = FoobotDrive(3.7, 10.5, 3/5, 70, 20)
+car = FoobotDrive(4.7, 11.4, 3/5, 70, 20)
 cs = FoobotColorSensor()
 us = FoobotUltrasonicSensor()
 
