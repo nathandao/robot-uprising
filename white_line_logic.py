@@ -9,12 +9,12 @@ class WhiteLineFollower:
         return False
 
     def is_it_white(self, rbg):
-        if rbg(0) > 200 and rgb(1) > 200 and rgb(2) > 200:
+        if rbg[0] > 200 and rgb[1] > 200 and rgb[2] > 200:
             return True
         return False
 
     def is_it_yellow(self, rbg):
-        if self.isValueBetween(140, 160, rbg(0)) and self.isValueBetween(140, 160, rbg(0)) and self.isValueBetween(50, 70, rbg(0)):
+        if self.isValueBetween(140, 160, rbg[0]) and self.isValueBetween(140, 160, rbg[1]) and self.isValueBetween(50, 70, rbg[2]):
             return True
         return False
 
