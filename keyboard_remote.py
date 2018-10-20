@@ -1,24 +1,20 @@
-import keyboard #Using module keyboard
-from drive import FoobotDrive
+# from pynput.keyboard import Key, Listener
+# # from drive import FoobotDrive
 
-car = FoobotDrive(3.53, 15.28, 3/5, 50, 20)
+# # car = FoobotDrive(3.53, 15.28, 3/5, 50, 20)
 
-def shout(e):
-    car.stop()
+# def on_release(e):
+#     print('released')
 
-keyboard.on_release(shout)
+# def on_press(key):
+#     if key == Key.up:
+#         print('UP!!!')
+#     if key == Key.down:
+#         print('DOWN!!!')
 
-while True:
-    try:
-        if keyboard.is_pressed(keyboard.KEY_UP):
-            car.run()
-        if keyboard.is_pressed(keyboard.KEY_DOWN):
-            car.run()
-        if keyboard.is_pressed('q'):
-            break
-        else:
-            pass
-    except:
-        break
+# with Listener(
+#         on_press=on_press,
+#         on_release=on_release) as listener:
+#     listener.join()
 
-car.stop()
+print interact()

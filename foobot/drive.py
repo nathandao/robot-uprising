@@ -22,6 +22,9 @@ class FoobotDrive:
         self.default_speed = default_speed
         self.default_turn_speed = default_turn_speed
         self.gear_ratio = gear_ratio
+
+        self.in_transition = False
+
         # self.move_steering = MoveSteering(OUTPUT_A, OUTPUT_B)
         self.move_tank= MoveTank(OUTPUT_A, OUTPUT_B)
 
@@ -29,7 +32,9 @@ class FoobotDrive:
         if speed == 0:
             speed = self.default_speed
         rotations = distance / self.wheel_dist / self.gear_ratio
+        self.in_transition = True
         self.move_tank.on_for_rotations(self.default_speed, self.default_speed, rotations)
+        self.in_transition = False
 
     def turn(self, deg, speed = 0):
         if speed == 0:
@@ -37,7 +42,9 @@ class FoobotDrive:
         if deg < 0:
             speed = 0 - speed
         rotation_arc = (pi * self.wheel_dist) * (deg / 360)
+        self.in_transition = True
         self.move_tank.on_for_rotations(speed, 0 - speed, rotation_arc / 16 / self.gear_ratio)
+        self.in_transition = False
 
     def turn_right(self, deg, speed = 0):
         turn(deg, speed)
@@ -48,7 +55,10 @@ class FoobotDrive:
     def run(self, speed = 0):
         if speed == 0:
             speed = self.default_speed
-        self.move_tank.on(speed, speed)
+        if self.in_transition == False:
+            self.in_transition = True
+            self.move_tank.on(speed, speed)
 
     def stop(self):
+        self.in_transition = False
         self.move_tank.stop()

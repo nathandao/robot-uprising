@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from drive import FoobotDrive
+from foobot.drive import FoobotDrive
 
-car = FoobotDrive(3.53, 15.28, 3/5, 70, 20)
+car = FoobotDrive(3.7, 10.5, 3/5, 70, 20)
 
 while True:
     dist = input("distance: ")

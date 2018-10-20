@@ -1,4 +1,4 @@
-from color_sensor import FoobotColorSensor
+from foobot.color_sensor import FoobotColorSensor
 
 color_sensor = FoobotColorSensor()
 
