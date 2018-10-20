@@ -52,7 +52,6 @@ class WhiteLineFollower:
             elif self.is_it_orange(self.color_sensor.rgb_left()) or self.is_it_orange(self.color_sensor.rgb_right()):
                 self.car.stop()
             else:
-                print('RUN FORWARD ---')
                 self.car.run()
         self.car.stop()
 
