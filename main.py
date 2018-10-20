@@ -20,7 +20,7 @@ us = FoobotUltrasonicSensor()
 
 loop = True
 
-us_reading = -1
+us_distance = -1
 
 cs_left_rgb = []
 cs_right_rgb = []
@@ -60,10 +60,13 @@ def t_us():
 us_thread = Thread(target = t_us)
 
 def t_log():
-    global us_reading
+    global us_distance, cs_left_reading, cs_right_reading
     while loop:
-        print(us_reading)
-        sleep(1);
+        print(cs_left_reading(0))
+        print(cs_left_reading(1))
+        print(cs_left_reading(2))
+        print(us_distance)
+        sleep(0.5);
 
 log_thread = Thread(target = t_log)
 
