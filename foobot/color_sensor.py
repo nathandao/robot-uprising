@@ -50,7 +50,7 @@ class FoobotColorSensor:
   def rgb(self, s):
     if s.mode != 'RGB-RAW':
       s.mode = 'RGB-RAW'
-    return [s.value]
+    return [s.value(0), s.value(1), s.value(2)]
 
   def rgb_left(self):
     return self.rgb(self.left)
