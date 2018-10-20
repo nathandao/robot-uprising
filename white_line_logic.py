@@ -1,7 +1,7 @@
 class WhiteLineFollower:
     def __init__(self, car, colorsensor):
         self.car = car
-        self.color_sensor  color_sensor
+        self.color_sensor = color_sensor
 
     def isValueBetween(min, max, value):
         if value < min and value > max:
@@ -17,7 +17,7 @@ class WhiteLineFollower:
         if isValueBetween(140, 160, rbg(0)) and isValueBetween(140, 160, rbg(0)) and isValueBetween(50, 70, rbg(0)):
             return True
         return False
-    
+
     def run():
         while True:
             if is_it_white(self.colorsensor.rgb_left()):
@@ -28,4 +28,3 @@ class WhiteLineFollower:
                 self.car.run()
     def stop():
         self.car.stop
-
