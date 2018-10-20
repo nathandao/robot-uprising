@@ -42,7 +42,7 @@ class FoobotDrive:
             deg = 0 - deg
             steering = 0 - steering
         rotation_arc = (pi * self.wheel_dist) * (deg / 360)
-        rotations = rotation_arc / 16 / self.gear_ratio
+        rotations = rotation_arc / 4 / self.gear_ratio
         self.move_tank.stop()
         self.move_steering.on_for_rotations(steering, speed, rotations)
 
