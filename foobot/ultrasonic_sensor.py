@@ -7,4 +7,4 @@ class FoobotUltrasonicSensor:
         self.sensor.mode = 'US-DIST-CM'
 
     def distance(self):
-        return sensor.distance_centimeters
+        return self.sensor.distance_centimeters
