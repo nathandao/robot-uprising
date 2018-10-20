@@ -53,6 +53,7 @@ class WhiteLineFollower:
                 print('ORANGE --- STOP')
                 self.car.stop()
             else:
+                print('RUNNING===============')
                 self.car.run()
         self.car.stop()
 
