@@ -29,7 +29,6 @@ def orangeColorDetected(colorArray):
 # function for moving forward, give target distance (cm) from wall, increment for movement in cm and turn in degrees
 def moveForwardWithWallDistance(targetDistanceFromWall, moveIncrement, turnIncrement):
     target = targetDistanceFromWall
-    car.move_straigth(moveIncrement)
     if (us.distance() > target):
         print('distance hight than target, turning left')
         car.turn_left(turnIncrement)
