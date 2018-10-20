@@ -11,20 +11,20 @@ class WhiteLineFollower:
             return True
         return False
 
-    def is_it_white(self, rbg):
-        if rbg[0] > whiteRMinVal and rgb[1] > whiteGMinVal and rgb[2] > whiteBMinVal:
+    def is_it_white(self, rgb):
+        if rgb[0] > whiteRMinVal and rgb[1] > whiteGMinVal and rgb[2] > whiteBMinVal:
             print('is WHITE')
             return True
         print('NOT ----- white')
         return False
 
-    def is_it_yellow(self, rbg):
-        if self.isValueBetween(yellowRMinVal, yellowRMaxVal, rbg[0]) and self.isValueBetween(yellowGMinVal, yellowGMaxVal, rbg[1]) and self.isValueBetween(yellowBMinVal, yellowBMaxVal, rbg[2]):
+    def is_it_yellow(self, rgb):
+        if self.isValueBetween(yellowRMinVal, yellowRMaxVal, rgb[0]) and self.isValueBetween(yellowGMinVal, yellowGMaxVal, rgb[1]) and self.isValueBetween(yellowBMinVal, yellowBMaxVal, rgb[2]):
             return True
         return False
 
-    def is_it_orange(self, rbg):
-        if self.isValueBetween(orangeRMinVal, orangeRMaxVal, rbg[0]) and self.isValueBetween(orangeGMinVal, orangeGMaxVal, rbg[1]) and self.isValueBetween(orangeBMinVal, orangeBMaxVal, rbg[2]):
+    def is_it_orange(self, rgb):
+        if self.isValueBetween(orangeRMinVal, orangeRMaxVal, rgb[0]) and self.isValueBetween(orangeGMinVal, orangeGMaxVal, rgb[1]) and self.isValueBetween(orangeBMinVal, orangeBMaxVal, rgb[2]):
             return True
         return False
 
