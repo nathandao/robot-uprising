@@ -14,7 +14,6 @@ from white_line_logic import WhiteLineFollower
 # Left Motor: PIN A
 # Right Motor: PIN B
 
-
 car = FoobotDrive(3.7, 10.5, 3/5, 70, 20)
 cs = FoobotColorSensor()
 us = FoobotUltrasonicSensor()
@@ -51,7 +50,6 @@ def t_cs_right():
         if cs_left_mode == 'ambient':
             cs_left_reading = cs.ambient_right()
         sleep(0.1);
-
 cs_right_thread = Thread(target = t_cs_right)
 
 def t_us():
@@ -72,11 +70,10 @@ def t_log():
 
 log_thread = Thread(target = t_log)
 
-cs_left_thread.start()
-cs_right_thread.start()
-us_thread.start()
+def init_telemetrics(show_log = True):
+    cs_left_thread.start()
+    cs_right_thread.start()
+    us_thread.start()
 
-log_thread.start()
-
-follow = WhiteLineFollower(car=car, color_sensor=cs)
-follow.run()
+    if show_log == True:
+        log_thread.start()
