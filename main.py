@@ -20,6 +20,16 @@ us = FoobotUltrasonicSensor()
 
 loop = True
 
+us_distance = -1
+
+cs_left_rgb = []
+cs_right_rgb = []
+
+cs_left_rgb = [-1, -1, -1]
+cs_right_rgb = [-1, -1, -1]
+cs_left_mode = 'rgb'
+cs_right_mode = 'rgb'
+
 def t_cs_left():
     global cs_left_mode
     global cs_left_reading
@@ -28,6 +38,7 @@ def t_cs_left():
             cs_left_reading = cs.rgb_left()
         if cs_left_mode == 'ambient':
             cs_left_reading = cs.ambient_left()
+
 cs_left_thread = Thread(target = t_cs_left)
 
 def t_cs_right():
@@ -35,9 +46,9 @@ def t_cs_right():
     global cs_right_reading
     while loop:
         if cs_right_mode == 'rgb':
-            cs_right_reading = cs.rgb_left()
+            cs_left_reading = cs.rgb_left()
         if cs_left_mode == 'ambient':
-            cs_right_reading = cs.ambient_left()
+            cs_left_reading = cs.ambient_left()
 
 cs_right_thread = Thread(target = t_cs_right)
 
@@ -45,16 +56,17 @@ def t_us():
     global us_distance
     while loop:
         us_distance = us.distance()
+
 us_thread = Thread(target = t_us)
 
 def t_log():
+    global us_reading
     while loop:
-        print('us: %s', us_distance)
-        sleep(1000);
+        print(us_reading)
+        sleep(1);
+
 log_thread = Thread(target = t_log)
 
-cs_left_mode = 'rgb'
-cs_right_mode = 'rgb'
 cs_left_thread.start()
 cs_right_thread.start()
 us_thread.start()
