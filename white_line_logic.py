@@ -10,7 +10,9 @@ class WhiteLineFollower:
 
     def is_it_white(self, rbg):
         if rbg[0] > 200 and rgb[1] > 200 and rgb[2] > 200:
+            print('is white')
             return True
+        print('NOT ----- white')
         return False
 
     def is_it_yellow(self, rbg):
@@ -21,10 +23,13 @@ class WhiteLineFollower:
     def run(self):
         while True:
             if self.is_it_white(self.color_sensor.rgb_left()):
-                self.car.turn_left()
+                self.car.stop()
+                self.car.turn_left(15)
             elif self.is_it_white(self.color_sensor.rgb_right()):
-                self.car.turn_right()
+                self.car.stop()
+                self.car.turn_right(15)
             else:
+                print('ELSE======')
                 self.car.run()
         self.car.stop()
 
