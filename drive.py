@@ -49,3 +49,6 @@ class FoobotDrive:
         if speed == 0:
             speed = self.default_speed
         self.move_tank.on(speed, speed)
+
+    def stop(self):
+        self.move_tank.stop()
