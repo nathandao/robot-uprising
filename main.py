@@ -61,9 +61,8 @@ us_thread = Thread(target = t_us)
 def t_log():
     global us_distance, cs_left_rgb, cs_right_rgb
     while loop:
-        print(cs_left_rgb[0])
-        print(cs_left_rgb[1])
-        print(cs_left_rgb[2])
+        print(','.join(str(x) for x in cs_left_rgb))
+        print(','.join(str(x) for x in cs_right_rgb))
         print(us_distance)
         sleep(0.5);
 
@@ -72,4 +71,5 @@ log_thread = Thread(target = t_log)
 cs_left_thread.start()
 cs_right_thread.start()
 us_thread.start()
+
 log_thread.start()
