@@ -20,7 +20,7 @@ us = FoobotUltrasonicSensor()
 
 loop = True
 
-us_distance = -1
+us_reading = -1
 
 cs_left_rgb = []
 cs_right_rgb = []

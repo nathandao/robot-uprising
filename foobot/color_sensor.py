@@ -26,7 +26,7 @@ class FoobotColorSensor:
   def intensity(self, s):
     if s.mode != 'COL-REFLECT':
       s.mode = 'COL-REFLECT'
-    return s.value()
+    return s.value
 
   def intensity_left(self):
     return self.intensity(self.left)
@@ -38,7 +38,7 @@ class FoobotColorSensor:
   def ambient(self, s):
     if s.mode != 'COL-AMBIENT':
       s.mode = 'COL-AMBIENT'
-    return s.value()
+    return s.value
 
   def ambient_left(self):
     return self.ambient(self.left)
