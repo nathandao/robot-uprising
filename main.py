@@ -35,9 +35,10 @@ def t_cs_right():
     global cs_right_reading
     while loop:
         if cs_right_mode == 'rgb':
-            cs_left_reading = cs.rgb_left()
+            cs_right_reading = cs.rgb_left()
         if cs_left_mode == 'ambient':
-            cs_left_reading = cs.ambient_left()
+            cs_right_reading = cs.ambient_left()
+
 cs_right_thread = Thread(target = t_cs_right)
 
 def t_us():
@@ -48,9 +49,6 @@ us_thread = Thread(target = t_us)
 
 def t_log():
     while loop:
-        print(','.)
-        print('cs left: %s', join(str(x) for x in cs_left_reading))
-        print('cs right: %s', join(str(x) for x in cs_right_reading))
         print('us: %s', us_reading)
         sleep(1000);
 log_thread = Thread(target = t_log)
