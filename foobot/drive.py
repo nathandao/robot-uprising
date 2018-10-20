@@ -39,6 +39,7 @@ class FoobotDrive:
         if speed == 0:
             speed = self.default_turn_speed
         if deg < 0:
+            deg = 0 - deg
             steering = 0 - steering
         rotation_arc = (pi * self.wheel_dist) * (deg / 360)
         rotations = rotation_arc / 16 / self.gear_ratio
