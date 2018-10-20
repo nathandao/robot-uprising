@@ -48,8 +48,9 @@ us_thread = Thread(target = t_us)
 
 def t_log():
     while loop:
-        print('cs left: %s', cs_left_reading)
-        print('cs right: %s', cs_right_reading)
+        print(','.)
+        print('cs left: %s', join(str(x) for x in cs_left_reading))
+        print('cs right: %s', join(str(x) for x in cs_right_reading))
         print('us: %s', us_reading)
         sleep(1000);
 log_thread = Thread(target = t_log)
@@ -59,6 +60,4 @@ cs_right_mode = 'rgb'
 cs_left_thread.start()
 cs_right_thread.start()
 us_thread.start()
-
-sleep(1000)
 log_thread.start()
