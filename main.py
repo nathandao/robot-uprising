@@ -38,7 +38,7 @@ def t_cs_left():
             cs_left_rgb = cs.rgb_left()
         if cs_left_mode == 'ambient':
             cs_left_reading = cs.ambient_left()
-        sleep(0.1);
+        sleep(0.2);
 
 cs_left_thread = Thread(target = t_cs_left)
 
@@ -49,14 +49,14 @@ def t_cs_right():
             cs_right_rgb = cs.rgb_right()
         if cs_left_mode == 'ambient':
             cs_left_reading = cs.ambient_right()
-        sleep(0.1);
+        sleep(0.2);
 cs_right_thread = Thread(target = t_cs_right)
 
 def t_us():
     global us_distance
     while loop:
         us_distance = us.distance()
-        sleep(0.1);
+        sleep(0.2);
 
 us_thread = Thread(target = t_us)
 
