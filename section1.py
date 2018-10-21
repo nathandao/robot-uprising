@@ -3,12 +3,6 @@ import variables
 from foobot.ultrasonic_sensor import FoobotUltrasonicSensor
 from main import car, cs, us
 
-orangeRedHighVal = 180
-orangeRedLowVal = 155
-orangeGreenHighVal = 55
-orangeGreenLowVal = 30
-orangeBlueHighVal = 45
-orangeBlueLowVal = 20
 
 #gets initial distance from wall to the right of the robot
 UsDistanceFromWall = us.distance()
