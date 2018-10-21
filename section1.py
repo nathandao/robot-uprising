@@ -25,7 +25,7 @@ def moveFromStartToOrange():
 
 # detects if color is orange and sends back a boolean
 def orangeColorInShadowDetected(colorArray):
-    if (colorArray[0] < variables.orange_shadow_high_r and colorArray[0] > variables.orange_shadow_low_r) and (colorArray[1] < variables.orange_shadow_high_g and colorArray[1] > variables.orange_shadow_low_g) and (colorArray[2] < variables.orange_shadow_high_b and colorArray[2] > variables.orange_shadow_low_b):
+    if (colorArray[0] < variables.orangeRMaxVal and colorArray[0] > variables.orangeRMinVal) and (colorArray[1] < variables.orangeGMaxVal and colorArray[1] > variables.orangeGMinVal) and (colorArray[2] < variables.orangeBMaxVal and colorArray[2] > variables.orangeBMinVal):
         print('Orange Not Detected')
         return True
     else:
@@ -34,7 +34,7 @@ def orangeColorInShadowDetected(colorArray):
 
 # detects whitetape in shadow conditions
 def whitetapeInShadowDetected(colorArray):
-    if (colorArray[0] < variables.whitetape_light_high_r and colorArray[0] > variables.whitetape_light_low_r) and (colorArray[1] < variables.whitetape_shadow_high_g and colorArray[1] > variables.whitetape_shadow_low_g) and (colorArray[2] < variables.whitetape_shadow_high_b and colorArray[2] > variables.whitetape_shadow_low_b):
+    if (colorArray[0] < variables.whiteRMaxVal and colorArray[0] > variables.whiteRMinVal) and (colorArray[1] < variables.whiteGMaxVal and colorArray[1] > variables.whiteGMinVal) and (colorArray[2] < variables.whiteBMaxVal and colorArray[2] > variables.whiteBMinVal):
         print('Orange Not Detected')
         return True
     else:

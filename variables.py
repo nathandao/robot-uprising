@@ -23,13 +23,13 @@ grey_light_low_g = (37 + 54 / 2) - threshold
 grey_light_low_b = (41 + 52 / 2) - threshold
 
 
-orangetape_shadow_high_r = (166 + 205 / 2) + threshold
-orangetape_shadow_high_g = (41 + 59 / 2) + threshold
-orangetape_shadow_high_b = (33 + 40 / 2) + threshold
+orangetape_shadow_high_r = 185 + threshold
+orangetape_shadow_high_g = 50 + threshold
+orangetape_shadow_high_b = 36 + threshold
 
-orangetape_shadow_low_r = (166 + 205 / 2) - threshold
-orangetape_shadow_low_g = (41 + 59 / 2)  - threshold
-orangetape_shadow_low_b = (33 + 40 / 2) - threshold
+orangetape_shadow_low_r = 185 - threshold
+orangetape_shadow_low_g = 50 - threshold
+orangetape_shadow_low_b = 36 - threshold
 
 orangetape_light_high_r = (168 + 212 / 2) + threshold
 orangetape_light_high_g = (44 + 61 / 2) + threshold
@@ -56,43 +56,47 @@ orange_light_high_g = (198 + 234 / 2) - threshold
 orange_light_high_b = (330 + 282 / 2) - threshold
 
 
-whitetape_shadow_high_r = (171 + 207 / 2) + threshold
-whitetape_shadow_high_g = (108 + 262 / 2) + threshold
-whitetape_shadow_high_b = (212 + 247 / 2) + threshold
+whitetape_shadow_high_r = 189 + threshold
+whitetape_shadow_high_g = 185 + threshold
+whitetape_shadow_high_b = 229 + threshold
 
-whitetape_shadow_low_r = (171 + 207 / 2) - threshold
-whitetape_shadow_low_g = (108 + 262 / 2) - threshold
-whitetape_shadow_low_b = (212 + 247 / 2) - threshold
+whitetape_shadow_low_r = 189 - threshold
+whitetape_shadow_low_g = 185 - threshold
+whitetape_shadow_low_b = 229 - threshold
 
-whitetape_light_high_r = (169 + 222 / 2) + threshold
-whitetape_light_high_g = (189 + 278 / 2) + threshold
-whitetape_light_high_b = (215 + 264 / 2) + threshold
+whitetape_light_high_r = 195 + threshold
+whitetape_light_high_g = 233 + threshold
+whitetape_light_high_b = 239 + threshold
 
-whitetape_light_low_r = (169 + 222 / 2) - threshold
-whitetape_light_low_g = (189 + 278 / 2) - threshold
-whitetape_light_low_b = (215 + 264 / 2) - threshold
+whitetape_light_low_r = 195 - threshold
+whitetape_light_low_g = 233 - threshold
+whitetape_light_low_b = 239 - threshold
 
-yellowpad_light_high_r = (143 + 200 / 2) + threshold
-yellowpad_light_high_g = (112 + 168 / 2) + threshold
-yellowpad_light_high_b = (39 + 37 / 2) + threshold
+yellowpad_light_high_r = 171 + threshold
+yellowpad_light_high_g = 140 + threshold
+yellowpad_light_high_b = 38 + threshold
 
-yellowpad_light_low_r = (143 + 200 / 2) - threshold
-yellowpad_light_low_g = (112 + 168 / 2) - threshold
-yellowpad_light_low_b = (39 + 37 / 2) - threshold
-
-
+yellowpad_light_low_r = 171 - threshold
+yellowpad_light_low_g = 140 - threshold
+yellowpad_light_low_b = 38 - threshold
 
 
-whiteRMinVal = 200
-whiteGMinVal = 200
-whiteBMinVal = 200
 
-yellowRMinVal = 140
-yellowRMaxVal = 160
-yellowGMinVal = 180
-yellowGMaxVal = 200
-yellowBMinVal = 160
-yellowBMaxVal = 185
+
+whiteRMinVal = whitetape_shadow_low_r
+whiteRMaxVal = whitetape_shadow_high_r
+whiteGMinVal = whitetape_shadow_low_g
+whiteGMaxVal = whitetape_shadow_high_g
+whiteBMinVal = whitetape_shadow_low_b
+whiteBMaxVal = whitetape_shadow_high_b
+
+
+yellowRMinVal = 150
+yellowRMaxVal = 191
+yellowGMinVal = 120
+yellowGMaxVal = 160
+yellowBMinVal = 18
+yellowBMaxVal = 60
 
 
 orangeRMinVal = 155
