@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import ev3dev2.fonts as fonts
 from foobot.color_sensor import FoobotColorSensor
 
 color_sensor = FoobotColorSensor()

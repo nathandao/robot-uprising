@@ -78,4 +78,4 @@ def init_telemetrics(show_log = True):
     if show_log == True:
         log_thread.start()
 
-# init_telemetrics()
+init_telemetrics(show_log = False)
