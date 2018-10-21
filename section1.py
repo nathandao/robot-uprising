@@ -13,9 +13,15 @@ orangeBlueLowVal = 20
 #gets initial distance from wall to the right of the robot
 UsDistanceFromWall = us.distance()
 
-def moveFromStartToOrange():
+def moveFromStartToMaze():
     while not whitetapeInShadowDetected(cs.rgb_left()):
         moveForwardWithWallDistance(8, 5, 5)
+    print("detected whitetape")
+    car.turn_left(45)
+    while orangeColorInShadowDetected(cs.rgb_left()):
+        car.move_straigth(45)
+        
+
 
 # detects if color is orange and sends back a boolean
 def orangeColorInShadowDetected(colorArray):
@@ -40,7 +46,7 @@ def moveForwardWithWallDistance(targetDistanceFromWall, moveIncrement, turnIncre
     target = targetDistanceFromWall
     if (us.distance() > target):
         print('distance hight than target, turning left')
-        car.turn_left(turnIncrement)w
+        car.turn_left(turnIncrement)
         car.move_straigth(moveIncrement)
     elif (us.distance() < target):
         print('distance lower than target, turning right')
