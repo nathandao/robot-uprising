@@ -13,7 +13,7 @@ orangeBlueLowVal = 20
 #gets initial distance from wall to the right of the robot
 UsDistanceFromWall = us.distance()
 
-def moveFromStartToMaze():
+def moveFromStartToOrange():
     while not whitetapeInShadowDetected(cs.rgb_left()):
         moveForwardWithWallDistance(8, 5, 5)
     print("detected whitetape")
